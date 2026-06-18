@@ -1,7 +1,9 @@
 export type Project = {
   id: string;
   title: string;
+  subtitle?: string;
   description: string;
+  highlights?: string[];
   tags: string[];
   href?: string;
   github?: string;
@@ -11,49 +13,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    id: "1",
-    title: "AI Web Application",
+    id: "vehicle-analytics",
+    title: "AI Vehicle Analytics Platform",
+    subtitle: "Real-time multi-camera CV + VLM operations dashboard",
     description:
-      "Full-stack AI product with Next.js frontend and Python backend — real-time inference, clean UX, production deployment.",
-    tags: ["Next.js", "Python", "LLM"],
+      "Real-time AI-powered vehicle analytics platform monitoring multiple live camera feeds — YOLO detection/tracking, VLM classification via Ollama, and a live ops dashboard with human-in-the-loop review.",
+    highlights: [
+      "Developed a FastAPI + WebSocket system for real-time monitoring of multiple live camera feeds with horizontal scaling.",
+      "Implemented an end-to-end computer vision pipeline using OpenCV + YOLO for detection/tracking and a Vision Language Model (Ollama) for vehicle classification.",
+      "Designed asynchronous processing with multi-worker queues, frame throttling, and memory controls to keep low-latency live updates.",
+      "Built REST APIs and frontend dashboards (HTML/JS) for live counts, line management, metadata updates, and human-in-the-loop review of uncertain detections.",
+      "Integrated MongoDB for event storage, aggregated statistics, and health monitoring, with retry handling for reliability.",
+      "Added production operations support via systemd service setup, backup automation, and retention policies.",
+    ],
+    tags: ["FastAPI", "YOLO", "OpenCV", "Ollama", "MongoDB", "WebSocket"],
+    href: "/projects/vehicle-analytics",
     featured: true,
     span: "wide",
   },
-  {
-    id: "2",
-    title: "Kaggle Competition",
-    description:
-      "Grandmaster-level competition solution with feature engineering, ensembling, and top leaderboard placement.",
-    tags: ["Python", "XGBoost", "Kaggle"],
-    featured: true,
-  },
-  {
-    id: "3",
-    title: "ML Pipeline",
-    description:
-      "End-to-end training and deployment pipeline with experiment tracking, model versioning, and monitoring.",
-    tags: ["MLOps", "PyTorch", "Docker"],
-    featured: true,
-  },
-  {
-    id: "4",
-    title: "NLP System",
-    description:
-      "Text classification and entity extraction system built for production workloads at scale.",
-    tags: ["NLP", "Transformers", "FastAPI"],
-  },
-  {
-    id: "5",
-    title: "Computer Vision",
-    description:
-      "Object detection and image analysis model with optimized inference for edge deployment.",
-    tags: ["CV", "PyTorch", "ONNX"],
-  },
-  {
-    id: "6",
-    title: "Data Dashboard",
-    description:
-      "Interactive analytics dashboard with live model metrics and business KPI visualization.",
-    tags: ["React", "Python", "SQL"],
-  },
 ];
+
+export function getProject(id: string): Project | undefined {
+  return projects.find((p) => p.id === id);
+}

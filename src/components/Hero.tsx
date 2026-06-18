@@ -21,14 +21,14 @@ export function Hero() {
       {/* Decorative ring + photo — sits on the 70/30 boundary like old site */}
       <div className="pointer-events-none absolute left-[70%] top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 lg:block">
         <div
-          className="absolute left-1/2 top-1/2 aspect-square w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="absolute left-1/2 top-1/2 aspect-square w-[38rem] -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
             background: "linear-gradient(90deg, transparent 50%, #262525 50%)",
           }}
           aria-hidden
         />
         <div className="relative flex items-center justify-center">
-          <ProfileImage size={240} neon />
+          <ProfileImage size={480} neon />
         </div>
       </div>
 
@@ -63,6 +63,9 @@ export function Hero() {
               {profile.title}
             </h1>
             <p className="mt-2 text-lg text-zinc-400">{profile.subtitle}</p>
+            <p className="mt-3 inline-flex items-center rounded-full border border-[#5db9ee]/30 bg-[#5db9ee]/10 px-4 py-1 text-sm font-medium text-[#5db9ee]">
+              #{profile.kagglePeakRank} Global Peak · Kaggle {profile.kagglePeakYear}
+            </p>
           </FadeIn>
           <FadeIn delay={200}>
             <p className="mt-6 max-w-[38rem] text-base leading-[1.8] text-white sm:text-[1.1rem]">
@@ -100,7 +103,7 @@ export function Hero() {
             </FadeIn>
             <FadeIn delay={500}>
               <div className="mt-10 flex justify-center">
-                <ProfileImage size={200} neon />
+                <ProfileImage size={280} neon />
               </div>
             </FadeIn>
           </div>

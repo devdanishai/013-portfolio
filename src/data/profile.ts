@@ -1,11 +1,13 @@
 export const profile = {
   name: "Danish Ammar",
   title: "LLM Systems Architect",
-  subtitle: "Kaggle Grandmaster",
+  subtitle: "Kaggle Grandmaster · Global Rank #26 (2025)",
   tagline:
-    "Kaggle Grandmaster · LLM Systems Architect · Production GenAI & RAG",
+    "Kaggle GM (#26 Global) · LLM Systems Architect · Production GenAI & RAG",
+  kagglePeakRank: 26,
+  kagglePeakYear: 2025,
   heroBio:
-    "I design and scale production-grade LLM systems. As a Kaggle Grandmaster and LLM Systems Architect, I build end-to-end GenAI products — from RAG pipelines and agent workflows to scalable, cloud-native deployment.",
+    "I design and scale production-grade LLM systems. Kaggle Grandmaster who peaked at #26 globally — I build end-to-end GenAI products from RAG pipelines and agent workflows to scalable, cloud-native deployment.",
   bio: "I design and scale production-grade LLM systems.",
   bioExtended:
     "I'm a Kaggle Grandmaster and LLM Systems Architect specializing in building end-to-end GenAI products — from RAG pipelines and agent workflows to scalable, cloud-native deployment.",
@@ -23,9 +25,9 @@ export const profile = {
   },
   stats: [
     { label: "Experience", value: "12+ yrs" },
-    { label: "Kaggle", value: "GM" },
+    { label: "Kaggle Peak", value: "#26" },
+    { label: "Tier", value: "GM" },
     { label: "Focus", value: "GenAI" },
-    { label: "Stack", value: "RAG · LLM" },
   ],
   focusAreas: [
     "Retrieval-Augmented Generation (RAG) systems",
@@ -41,7 +43,7 @@ export const profile = {
     "Evaluation pipelines controlling hallucination & drift",
   ],
   highlights: [
-    "Kaggle Grandmaster with competition-winning ML solutions",
+    "Peaked at #26 global rank on Kaggle in 2025 — Grandmaster tier",
     "End-to-end GenAI products — RAG, agents, cloud-native deployment",
     "Production LLM systems with cost optimization & evaluation pipelines",
     "12+ years from research prototype to scalable, maintainable AI systems",

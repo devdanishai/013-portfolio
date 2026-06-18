@@ -14,7 +14,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <SectionHeader
             label="Featured"
-            title="Selected projects"
+            title="Production work"
             href="/projects"
             linkText="View all →"
           />

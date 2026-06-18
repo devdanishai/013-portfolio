@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { Project } from "@/data/projects";
 
@@ -7,6 +8,10 @@ function spanClass(span?: Project["span"]) {
   if (span === "wide") return "sm:col-span-2";
   if (span === "tall") return "sm:row-span-2";
   return "";
+}
+
+function isInternal(href: string) {
+  return href.startsWith("/");
 }
 
 function ProjectCard({
@@ -62,10 +67,23 @@ function ProjectCard({
           </span>
         ))}
       </div>
+      {project.href && (
+        <p className="mt-4 text-xs text-zinc-600 opacity-0 transition-opacity group-hover:text-[#5db9ee] group-hover:opacity-100">
+          View case study →
+        </p>
+      )}
     </>
   );
 
   const style = { transitionDelay: `${index * 80}ms` };
+
+  if (project.href && isInternal(project.href)) {
+    return (
+      <Link ref={ref as React.Ref<HTMLAnchorElement>} href={project.href} className={className} style={style}>
+        {content}
+      </Link>
+    );
+  }
 
   if (project.href) {
     return (
