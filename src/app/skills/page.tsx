@@ -5,7 +5,8 @@ import { profile } from "@/data/profile";
 
 export const metadata: Metadata = {
   title: `Skills — ${profile.name}`,
-  description: "Machine learning, LLMs, Python, FastAPI, Next.js, and production AI tooling.",
+  description:
+    "RAG, LLM fine-tuning, agent workflows, multimodal AI, and production GenAI engineering.",
 };
 
 export default function SkillsPage() {
@@ -14,7 +15,7 @@ export default function SkillsPage() {
       <PageHeader
         label="Skills"
         title="Tools & technologies"
-        description="A focused stack for building, training, and deploying AI systems end to end."
+        description="GenAI, RAG, agent architectures, and production LLM engineering at scale."
       />
       <SkillsContent />
     </>

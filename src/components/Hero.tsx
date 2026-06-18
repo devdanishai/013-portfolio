@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FadeIn } from "@/components/FadeIn";
-import { ProfileHero, ProfileImage } from "@/components/ProfileImage";
+import { ProfileImage } from "@/components/ProfileImage";
 import { profile } from "@/data/profile";
 
 const socials = [
@@ -11,64 +11,79 @@ const socials = [
 
 export function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-10vh)]">
-      <div className="flex min-h-[calc(100vh-10vh)] flex-col lg:flex-row">
-        {/* Left — 70% */}
-        <div className="flex flex-1 lg:w-[70%]">
-          {/* Social icons — inline like old site */}
-          <div className="hidden shrink-0 flex-col items-center justify-center gap-10 pl-10 pr-2 lg:flex">
-            {socials.map((social) => (
-              <Link
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-                className="social-icon text-2xl font-semibold"
-                title={social.label}
-              >
-                {social.icon}
+    <section className="relative min-h-[calc(100vh-10vh)] overflow-hidden">
+      {/* Right blue gradient panel */}
+      <div
+        className="hero-right-panel pointer-events-none absolute bottom-0 right-0 top-0 hidden w-[30%] lg:block"
+        aria-hidden
+      />
+
+      {/* Decorative ring + photo — sits on the 70/30 boundary like old site */}
+      <div className="pointer-events-none absolute left-[70%] top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 lg:block">
+        <div
+          className="absolute left-1/2 top-1/2 aspect-square w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          style={{
+            background: "linear-gradient(90deg, transparent 50%, #262525 50%)",
+          }}
+          aria-hidden
+        />
+        <div className="relative flex items-center justify-center">
+          <ProfileImage size={240} neon />
+        </div>
+      </div>
+
+      {/* Left content */}
+      <div className="relative z-20 flex min-h-[calc(100vh-10vh)] w-full lg:w-[70%]">
+        {/* Social icons */}
+        <div className="hidden w-20 shrink-0 flex-col items-center justify-center gap-12 pl-6 lg:flex xl:pl-10">
+          {socials.map((social) => (
+            <Link
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.label}
+              className="social-icon text-2xl font-semibold"
+              title={social.label}
+            >
+              {social.icon}
+            </Link>
+          ))}
+        </div>
+
+        {/* Text content */}
+        <div className="flex flex-1 flex-col justify-center px-8 py-16 sm:px-10 lg:py-20 lg:pl-4 lg:pr-16">
+          <FadeIn>
+            <p className="text-xl text-white sm:text-2xl">
+              Hi! I am <span className="accent-text">{profile.name}</span>
+            </p>
+          </FadeIn>
+          <FadeIn delay={100}>
+            <h1 className="mt-2 text-4xl font-bold leading-tight text-[#5db9ee] sm:text-5xl lg:text-[4rem]">
+              {profile.title}
+            </h1>
+            <p className="mt-2 text-lg text-zinc-400">{profile.subtitle}</p>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <p className="mt-6 max-w-[38rem] text-base leading-[1.8] text-white sm:text-[1.1rem]">
+              {profile.heroBio}
+            </p>
+          </FadeIn>
+          <FadeIn delay={300}>
+            <div className="hero-buttons">
+              <Link href="/contact" className="btn-primary rounded-lg px-6 py-3 text-[1.1rem] font-medium">
+                Hire Me
               </Link>
-            ))}
-          </div>
+              <Link href="/projects" className="btn-outline rounded-lg px-6 py-3 text-[1.1rem] font-medium">
+                View Project
+              </Link>
+            </div>
+          </FadeIn>
 
-          {/* Content */}
-          <div className="flex flex-1 flex-col justify-center px-8 py-16 sm:px-12 lg:px-10 lg:py-20">
-            <FadeIn>
-              <p className="text-xl text-white sm:text-2xl">
-                Hi! I am <span className="accent-text">{profile.name}</span>
-              </p>
-            </FadeIn>
-            <FadeIn delay={100}>
-              <h1 className="mt-2 text-4xl font-bold leading-tight text-[#5db9ee] sm:text-5xl lg:text-[4rem]">
-                {profile.title}
-              </h1>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <p className="mt-6 max-w-[38rem] text-base leading-[1.8] text-white sm:text-[1.1rem]">
-                {profile.heroBio}
-              </p>
-            </FadeIn>
-            <FadeIn delay={300}>
-              <div className="mt-10 flex flex-wrap items-center gap-4 sm:gap-8">
-                <Link
-                  href="/contact"
-                  className="btn-primary inline-flex items-center justify-center rounded-lg px-6 py-3 text-[1.1rem] font-medium"
-                >
-                  Hire Me
-                </Link>
-                <Link
-                  href="/projects"
-                  className="btn-outline inline-flex items-center justify-center rounded-lg px-6 py-3 text-[1.1rem] font-medium"
-                >
-                  View Project
-                </Link>
-              </div>
-            </FadeIn>
-
-            {/* Mobile social + photo */}
+          {/* Mobile: social + photo */}
+          <div className="lg:hidden">
             <FadeIn delay={400}>
-              <div className="mt-10 flex justify-center gap-8 lg:hidden">
+              <div className="mt-10 flex justify-center gap-10">
                 {socials.map((social) => (
                   <Link
                     key={social.label}
@@ -82,16 +97,13 @@ export function Hero() {
                   </Link>
                 ))}
               </div>
-              <div className="mt-10 flex justify-center lg:hidden">
+            </FadeIn>
+            <FadeIn delay={500}>
+              <div className="mt-10 flex justify-center">
                 <ProfileImage size={200} neon />
               </div>
             </FadeIn>
           </div>
-        </div>
-
-        {/* Right — 30% */}
-        <div className="hero-right-panel relative hidden overflow-hidden lg:flex lg:w-[30%]">
-          <ProfileHero />
         </div>
       </div>
     </section>

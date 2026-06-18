@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { FadeIn } from "@/components/FadeIn";
+import { useEffect, useRef, useState } from "react";
 
 const pages = [
   {
@@ -32,40 +34,67 @@ const pages = [
   },
 ];
 
+function ExploreCard({
+  page,
+  index,
+}: {
+  page: (typeof pages)[0];
+  index: number;
+}) {
+  const ref = useRef<HTMLAnchorElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(el);
+        }
+      },
+      { threshold: 0.1 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <Link
+      ref={ref}
+      href={page.href}
+      className={`glass glass-interactive group relative flex h-full min-h-[180px] flex-col overflow-hidden rounded-2xl p-6 transition-opacity duration-700 ${visible ? "opacity-100" : "opacity-0"}`}
+      style={{ transitionDelay: `${index * 100}ms` }}
+    >
+      <div
+        className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${page.accent} opacity-0 transition-opacity group-hover:opacity-100`}
+      />
+      <div className="relative">
+        <p className="section-label mb-2">{page.label}</p>
+        <h3 className="text-lg font-semibold text-white transition-colors group-hover:text-[#5db9ee]">
+          {page.title}
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+          {page.description}
+        </p>
+        <span className="mt-4 inline-block text-sm text-zinc-500 transition-all group-hover:translate-x-1 group-hover:text-[#5db9ee]">
+          Learn more →
+        </span>
+      </div>
+    </Link>
+  );
+}
+
 export function ExploreCards() {
   return (
     <section className="px-6 py-20">
       <div className="mx-auto max-w-6xl">
-        <FadeIn>
-          <p className="section-label mb-2">Explore</p>
-          <p className="mb-10 text-2xl font-semibold text-zinc-100">
-            Dive deeper
-          </p>
-        </FadeIn>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <p className="section-label mb-2">Explore</p>
+        <p className="mb-10 text-2xl font-semibold text-white">Dive deeper</p>
+        <div className="grid gap-6 sm:grid-cols-2">
           {pages.map((page, i) => (
-            <FadeIn key={page.href} delay={i * 100} className="h-full">
-              <Link
-                href={page.href}
-                className="glass glass-interactive group relative flex h-full flex-col overflow-hidden rounded-2xl p-6"
-              >
-                <div
-                  className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${page.accent} opacity-0 transition-opacity group-hover:opacity-100`}
-                />
-                <div className="relative">
-                  <p className="section-label mb-2">{page.label}</p>
-                  <h3 className="text-lg font-semibold text-white transition-colors group-hover:text-[#5db9ee]">
-                    {page.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-400">
-                    {page.description}
-                  </p>
-                  <span className="mt-4 inline-block text-sm text-zinc-500 transition-all group-hover:translate-x-1 group-hover:text-[#5db9ee]">
-                    Learn more →
-                  </span>
-                </div>
-              </Link>
-            </FadeIn>
+            <ExploreCard key={page.href} page={page} index={i} />
           ))}
         </div>
       </div>

@@ -186,3 +186,19 @@ body {
 .hero-right-panel {
   background: linear-gradient(-90deg, #3877ff 0%, #262525 100%);
 }
+
+/* Button row — prevent overlap */
+.hero-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.hero-buttons a {
+  flex-shrink: 0;
+  min-width: 140px;
+  text-align: center;
+}

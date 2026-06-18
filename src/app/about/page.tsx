@@ -5,7 +5,7 @@ import { profile } from "@/data/profile";
 
 export const metadata: Metadata = {
   title: `About — ${profile.name}`,
-  description: profile.bio,
+  description: profile.bioExtended,
 };
 
 export default function AboutPage() {
@@ -14,7 +14,7 @@ export default function AboutPage() {
       <PageHeader
         label="About"
         title="Who I am"
-        description="AI/ML engineer with 12+ years of experience building intelligent systems and shipping them to production."
+        description="Kaggle Grandmaster and LLM Systems Architect building production-grade GenAI systems that scale."
       />
       <AboutContent />
     </>

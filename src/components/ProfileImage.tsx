@@ -45,21 +45,3 @@ export function ProfileImage({ size = 120, neon = false }: ProfileImageProps) {
     </div>
   );
 }
-
-export function ProfileHero() {
-  return (
-    <div className="relative flex h-full w-full items-center justify-center">
-      {/* Decorative ring — sits at panel edge like old site */}
-      <div
-        className="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full"
-        style={{
-          background: "linear-gradient(90deg, transparent 50%, #262525 50%)",
-        }}
-        aria-hidden
-      />
-      <div className="relative z-10">
-        <ProfileImage size={240} neon />
-      </div>
-    </div>
-  );
-}
