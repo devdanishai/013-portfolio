@@ -16,8 +16,8 @@ export function ProfileImage({ size = 120, neon = false }: ProfileImageProps) {
     return (
       <div className="relative shrink-0" style={{ width: size, height: size }}>
         <div
-          className="relative flex h-full w-full items-center justify-center rounded-full border-4 border-white bg-[#5db9ee] font-semibold text-[#262525]"
-          style={{ fontSize: size * 0.32 }}
+          className="relative flex h-full w-full items-center justify-center rounded-full border-[0.8rem] border-white bg-[#5db9ee] font-semibold text-[#262525]"
+          style={{ fontSize: size * 0.28 }}
         >
           {profile.initials}
         </div>
@@ -29,7 +29,7 @@ export function ProfileImage({ size = 120, neon = false }: ProfileImageProps) {
     <div className="relative shrink-0" style={{ width: size, height: size }}>
       {neon && (
         <div
-          className="absolute -inset-4 animate-pulse-glow rounded-full bg-[#3877ff]/30 blur-xl"
+          className="absolute -inset-3 rounded-full bg-[#3877ff]/25 blur-lg"
           aria-hidden
         />
       )}
@@ -38,7 +38,7 @@ export function ProfileImage({ size = 120, neon = false }: ProfileImageProps) {
         alt={profile.name}
         width={size}
         height={size}
-        className={`relative rounded-full border-4 border-white object-cover ${neon ? "neon-glow" : ""}`}
+        className={`relative h-full w-full rounded-full border-[0.8rem] border-white object-cover ${neon ? "neon-glow" : ""}`}
         priority
         onError={() => setError(true)}
       />
@@ -48,16 +48,17 @@ export function ProfileImage({ size = 120, neon = false }: ProfileImageProps) {
 
 export function ProfileHero() {
   return (
-    <div className="relative flex h-full min-h-[420px] w-full items-center justify-center">
+    <div className="relative flex h-full w-full items-center justify-center">
+      {/* Decorative ring — sits at panel edge like old site */}
       <div
-        className="absolute aspect-square w-[min(38rem,90%)] rounded-full"
+        className="pointer-events-none absolute left-1/2 top-1/2 aspect-square w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full"
         style={{
           background: "linear-gradient(90deg, transparent 50%, #262525 50%)",
         }}
         aria-hidden
       />
-      <div className="relative">
-        <ProfileImage size={280} neon />
+      <div className="relative z-10">
+        <ProfileImage size={240} neon />
       </div>
     </div>
   );

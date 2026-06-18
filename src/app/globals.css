@@ -76,6 +76,9 @@ body {
 
 /* Buttons — from old portfolio */
 .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: #5db9ee;
   color: #262525;
   border: 1px solid #5db9ee;
@@ -85,10 +88,12 @@ body {
 .btn-primary:hover {
   background: transparent;
   color: #5db9ee;
-  transform: translateY(-1px);
 }
 
 .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   color: #5db9ee;
   border: 1px solid #5db9ee;
@@ -98,7 +103,6 @@ body {
 .btn-outline:hover {
   background: #5db9ee;
   color: #262525;
-  transform: translateY(-1px);
 }
 
 /* Nav underline — from old portfolio */
@@ -132,7 +136,7 @@ body {
 }
 
 .nav-link.active {
-  color: #5db9ee;
+  color: #fff;
 }
 
 /* Section label */
@@ -143,15 +147,12 @@ body {
   color: #5db9ee;
 }
 
-/* Neon profile glow — from old portfolio */
+/* Neon profile glow — toned down */
 .neon-glow {
   box-shadow:
-    0 0 1rem #fff,
-    inset 0 0 1rem #fff,
-    0 0 2rem #3877ff,
-    inset 0 0 2rem #3877ff,
-    0 0 4rem #3877ff,
-    inset 0 0 4rem #3877ff;
+    0 0 0.5rem #fff,
+    0 0 1.5rem #3877ff,
+    0 0 3rem #3877ff;
 }
 
 /* Social icon hover */

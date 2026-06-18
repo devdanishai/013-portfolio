@@ -18,3 +18,9 @@ git push -u origin main
 npm run dev
 
 # 5. optional — deploy on Vercel (import repo in dashboard)
+
+________________________________________________________________
+# after changes run these 
+git add .
+git commit -m "Apply neon dark theme from old portfolio"
+git push
