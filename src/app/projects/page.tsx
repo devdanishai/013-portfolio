@@ -21,8 +21,13 @@ export default function ProjectsPage() {
       />
       <div className="mx-auto max-w-6xl px-6 pb-20">
         <div className="mb-4">
-          <p className="section-label mb-2">Production</p>
-          <h2 className="text-xl font-semibold text-white">Featured work</h2>
+          <p className="section-label mb-2">Featured</p>
+          <h2 className="text-xl font-semibold text-white">
+            Production &amp; selected demos
+          </h2>
+          <p className="mt-2 text-sm text-zinc-400">
+            Production system plus standout GenAI, RAG, and multimodal experiments.
+          </p>
         </div>
         <BentoGrid projects={projects} />
         <ArchiveSection />

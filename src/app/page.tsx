@@ -4,7 +4,7 @@ import { Hero } from "@/components/Hero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { projects } from "@/data/projects";
 
-const featured = projects.filter((p) => p.featured);
+const featured = projects.filter((p) => p.featured && p.showOnHome !== false);
 
 export default function Home() {
   return (
@@ -14,7 +14,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <SectionHeader
             label="Featured"
-            title="Production work"
+            title="Production & selected demos"
             href="/projects"
             linkText="View all →"
           />

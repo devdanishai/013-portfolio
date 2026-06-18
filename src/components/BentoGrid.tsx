@@ -69,7 +69,7 @@ function ProjectCard({
       </div>
       {project.href && (
         <p className="mt-4 text-xs text-zinc-600 opacity-0 transition-opacity group-hover:text-[#5db9ee] group-hover:opacity-100">
-          View case study →
+          {isInternal(project.href) ? "View case study →" : "View on GitHub →"}
         </p>
       )}
     </>

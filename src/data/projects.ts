@@ -8,6 +8,7 @@ export type Project = {
   href?: string;
   github?: string;
   featured?: boolean;
+  showOnHome?: boolean;
   span?: "default" | "wide" | "tall";
 };
 
@@ -29,7 +30,63 @@ export const projects: Project[] = [
     tags: ["FastAPI", "YOLO", "OpenCV", "Ollama", "MongoDB", "WebSocket"],
     href: "/projects/vehicle-analytics",
     featured: true,
+    showOnHome: true,
     span: "wide",
+  },
+  {
+    id: "multidoc-rag",
+    title: "RAG PDF Multi-Doc Chatbot",
+    description:
+      "Custom multi-PDF RAG chatbot with FastAPI backend, ChromaDB vector store, and a web UI for document Q&A across multiple files.",
+    tags: ["FastAPI", "RAG", "ChromaDB", "Groq"],
+    href: "https://github.com/devdanishai/multidoc_fastapi",
+    github: "https://github.com/devdanishai/multidoc_fastapi",
+    featured: true,
+    showOnHome: false,
+  },
+  {
+    id: "df-agentic",
+    title: "DataFrame Agentic Chatbot",
+    description:
+      "Agentic chatbot that reasons over pandas DataFrames — natural language queries, analysis, and insights with a FastAPI + HTML/JS frontend.",
+    tags: ["Agents", "FastAPI", "Python", "HTML/JS"],
+    href: "https://github.com/devdanishai/df-agentic-chatbot",
+    github: "https://github.com/devdanishai/df-agentic-chatbot",
+    featured: true,
+    showOnHome: false,
+  },
+  {
+    id: "yt-summary",
+    title: "YouTube Multi-Language Summarizer",
+    description:
+      "Summarize YouTube videos in multiple languages using Gemini, with FastAPI backend and a clean HTML/JS client interface.",
+    tags: ["FastAPI", "Gemini", "NLP", "HTML/JS"],
+    href: "https://github.com/devdanishai/YT-Summary-FA",
+    github: "https://github.com/devdanishai/YT-Summary-FA",
+    featured: true,
+    showOnHome: false,
+  },
+  {
+    id: "ai-voice-chatbot",
+    title: "AI Voice Chatbot",
+    description:
+      "Multimodal voice-enabled chatbot built with Streamlit — speech input, AI responses, and interactive conversational UI.",
+    tags: ["Streamlit", "Voice", "Multimodal"],
+    href: "https://github.com/devdanishai/AI-voice-chatbot-streamlit",
+    github: "https://github.com/devdanishai/AI-voice-chatbot-streamlit",
+    featured: true,
+    showOnHome: false,
+  },
+  {
+    id: "image-search",
+    title: "E-Commerce Image Search",
+    description:
+      "Visual product search engine using CLIP embeddings — upload an image and find similar items in an e-commerce catalog.",
+    tags: ["Streamlit", "CLIP", "Computer Vision"],
+    href: "https://github.com/devdanishai/image-search-clip-st",
+    github: "https://github.com/devdanishai/image-search-clip-st",
+    featured: true,
+    showOnHome: false,
   },
 ];
 

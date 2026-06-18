@@ -14,11 +14,6 @@ export const archiveCategories: ArchiveCategory[] = [
     name: "Generative AI / Multimodal AI",
     projects: [
       {
-        title: "AI Voice Chatbot",
-        github: "https://github.com/devdanishai/AI-voice-chatbot-streamlit",
-        tags: ["Streamlit", "Voice", "AI"],
-      },
-      {
         title: "AI Image Generator",
         github: "https://github.com/devdanishai/txt-2-img-app-st-dalle3-",
         tags: ["Streamlit", "DALL·E", "GenAI"],
@@ -28,16 +23,6 @@ export const archiveCategories: ArchiveCategory[] = [
   {
     name: "Natural Language Processing (NLP)",
     projects: [
-      {
-        title: "DataFrame Agentic Chatbot",
-        github: "https://github.com/devdanishai/df-agentic-chatbot",
-        tags: ["Agents", "FastAPI", "HTML/JS"],
-      },
-      {
-        title: "RAG PDF Multi-Doc Chatbot",
-        github: "https://github.com/devdanishai/multidoc_fastapi",
-        tags: ["FastAPI", "RAG", "ChromaDB"],
-      },
       {
         title: "Resume Scanner",
         github: "https://github.com/devdanishai/resume-scanner-st",
@@ -52,11 +37,6 @@ export const archiveCategories: ArchiveCategory[] = [
         title: "Sentiment Classifier",
         github: "https://github.com/devdanishai/Text-Sentiment-Classifier-App-st",
         tags: ["Streamlit", "NLP"],
-      },
-      {
-        title: "YouTube Summarizer",
-        github: "https://github.com/devdanishai/YT-Summary-FA",
-        tags: ["FastAPI", "Gemini", "HTML/JS"],
       },
     ],
   },
@@ -73,11 +53,6 @@ export const archiveCategories: ArchiveCategory[] = [
   {
     name: "Computer Vision",
     projects: [
-      {
-        title: "Image Search Engine for E-Commerce",
-        github: "https://github.com/devdanishai/image-search-clip-st",
-        tags: ["Streamlit", "CLIP"],
-      },
       {
         title: "AI Image Analyzer",
         github: "https://github.com/devdanishai/vision-gemini",
