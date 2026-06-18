@@ -17,18 +17,28 @@ export const profile = {
     { label: "Focus", value: "ML + Web" },
     { label: "Stack", value: "Python · TS" },
   ],
-  skills: [
-    "Machine Learning",
-    "Deep Learning",
-    "NLP",
-    "Computer Vision",
-    "Python",
-    "PyTorch",
-    "TensorFlow",
-    "Next.js",
-    "TypeScript",
-    "FastAPI",
-    "LLMs",
-    "MLOps",
+  highlights: [
+    "Kaggle Grandmaster with competition-winning ML solutions",
+    "Full-stack AI web apps — FastAPI, Next.js, Streamlit, Groq, Gemini",
+    "Production RAG systems, agentic chatbots, and document pipelines",
+    "12+ years turning data and models into shipped products",
+  ],
+  skillCategories: [
+    {
+      name: "Machine Learning",
+      skills: ["Deep Learning", "NLP", "Computer Vision", "Feature Engineering", "Ensembling"],
+    },
+    {
+      name: "Languages & Frameworks",
+      skills: ["Python", "PyTorch", "TensorFlow", "Next.js", "TypeScript", "FastAPI"],
+    },
+    {
+      name: "AI & LLMs",
+      skills: ["LLMs", "RAG", "Groq", "Gemini", "ChromaDB", "Agentic Systems"],
+    },
+    {
+      name: "Tools & Ops",
+      skills: ["MLOps", "Docker", "Streamlit", "Git", "SQL", "Vercel"],
+    },
   ],
 };

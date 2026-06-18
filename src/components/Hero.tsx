@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { profile } from "@/data/profile";
 import { ProfileImage } from "./ProfileImage";
 
@@ -18,20 +19,18 @@ export function Hero() {
             {profile.tagline}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3 sm:justify-start">
-            <a
-              href="#projects"
+            <Link
+              href="/projects"
               className="rounded-full bg-violet-600 px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-violet-500"
             >
               View projects
-            </a>
-            <a
-              href={profile.links.github}
-              target="_blank"
-              rel="noopener noreferrer"
+            </Link>
+            <Link
+              href="/about"
               className="rounded-full border border-white/10 px-6 py-2.5 text-sm font-medium text-zinc-300 transition-colors hover:border-white/20 hover:text-zinc-100"
             >
-              GitHub
-            </a>
+              About me
+            </Link>
           </div>
         </div>
       </div>
