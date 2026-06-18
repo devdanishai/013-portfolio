@@ -15,7 +15,7 @@ const nav = [
 
 function linkClass(active: boolean) {
   return active
-    ? "text-violet-400"
+    ? "text-violet-300"
     : "text-zinc-400 transition-colors hover:text-zinc-100";
 }
 
@@ -40,14 +40,14 @@ export function Nav() {
       <button
         type="button"
         aria-label="Toggle menu"
-        className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-zinc-300 sm:hidden"
+        className="glass flex h-9 w-9 items-center justify-center rounded-lg text-zinc-300 sm:hidden"
         onClick={() => setOpen((v) => !v)}
       >
         {open ? "✕" : "☰"}
       </button>
 
       {open && (
-        <div className="absolute left-0 right-0 top-full border-b border-white/5 bg-zinc-950/95 backdrop-blur-md sm:hidden">
+        <div className="glass absolute left-0 right-0 top-full border-t border-white/5 sm:hidden">
           <nav className="flex flex-col gap-1 px-6 py-4">
             {nav.map((item) => (
               <Link
@@ -62,7 +62,7 @@ export function Nav() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-full bg-violet-600 px-4 py-2.5 text-center text-sm font-medium text-white"
+              className="btn-primary mt-2 rounded-full px-4 py-2.5 text-center text-sm font-medium text-white"
             >
               Get in touch
             </Link>
