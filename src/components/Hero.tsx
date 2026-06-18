@@ -21,14 +21,14 @@ export function Hero() {
       {/* Decorative ring + photo — sits on the 70/30 boundary like old site */}
       <div className="pointer-events-none absolute left-[70%] top-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 lg:block">
         <div
-          className="absolute left-1/2 top-1/2 aspect-square w-[38rem] -translate-x-1/2 -translate-y-1/2 rounded-full"
+          className="absolute left-1/2 top-1/2 aspect-square w-[30.78rem] -translate-x-1/2 -translate-y-1/2 rounded-full"
           style={{
             background: "linear-gradient(90deg, transparent 50%, #262525 50%)",
           }}
           aria-hidden
         />
         <div className="relative flex items-center justify-center">
-          <ProfileImage size={480} neon />
+          <ProfileImage size={389} neon />
         </div>
       </div>
 
@@ -103,7 +103,7 @@ export function Hero() {
             </FadeIn>
             <FadeIn delay={500}>
               <div className="mt-10 flex justify-center">
-                <ProfileImage size={280} neon />
+                <ProfileImage size={227} neon />
               </div>
             </FadeIn>
           </div>
