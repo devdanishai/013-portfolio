@@ -22,17 +22,17 @@ export function ProjectCard({
     : {};
 
   return (
-    <FadeIn delay={index * 80}>
+    <FadeIn delay={index * 80} className="h-full">
       <Wrapper
         {...linkProps}
         className={`glass glass-interactive group flex h-full flex-col rounded-2xl p-6 ${spanClass(project.span)} ${project.href ? "cursor-pointer" : ""}`}
       >
         <div className="mb-4 flex items-start justify-between gap-3">
-          <h3 className="text-lg font-semibold text-zinc-100 transition-colors group-hover:text-violet-300">
+          <h3 className="text-lg font-semibold text-white transition-colors group-hover:text-[#5db9ee]">
             {project.title}
           </h3>
           {project.href && (
-            <span className="shrink-0 text-zinc-600 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-violet-400">
+            <span className="shrink-0 text-zinc-500 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-[#5db9ee]">
               ↗
             </span>
           )}
@@ -44,7 +44,7 @@ export function ProjectCard({
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-violet-500/20 bg-violet-500/10 px-2.5 py-0.5 font-mono text-xs text-violet-300"
+              className="rounded-full border border-[#5db9ee]/20 bg-[#5db9ee]/10 px-2.5 py-0.5 text-xs text-[#5db9ee]"
             >
               {tag}
             </span>

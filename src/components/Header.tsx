@@ -1,18 +1,10 @@
-import Link from "next/link";
-import { Logo, Nav } from "./Nav";
+import { Nav } from "./Nav";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/5 bg-[#030712]/70 backdrop-blur-xl">
-      <div className="relative mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Logo />
+    <header className="sticky top-0 z-50 w-full bg-[#262525]/90 backdrop-blur-sm">
+      <div className="relative mx-auto flex h-[10vh] min-h-[60px] max-w-6xl items-center justify-center px-6">
         <Nav />
-        <Link
-          href="/contact"
-          className="btn-primary hidden rounded-full px-4 py-1.5 text-sm font-medium text-white sm:inline-flex"
-        >
-          Get in touch
-        </Link>
       </div>
     </header>
   );

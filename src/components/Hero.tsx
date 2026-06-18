@@ -1,58 +1,60 @@
 import Link from "next/link";
 import { FadeIn } from "@/components/FadeIn";
+import { ProfileHero, ProfileImage } from "@/components/ProfileImage";
+import { SocialSidebar } from "@/components/SocialSidebar";
 import { profile } from "@/data/profile";
-import { ProfileImage } from "./ProfileImage";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 py-20 sm:py-28">
-      <div className="relative mx-auto flex max-w-6xl flex-col items-center gap-10 sm:flex-row sm:items-start sm:gap-14">
-        <FadeIn>
-          <ProfileImage size={140} />
-        </FadeIn>
-        <div className="flex flex-col items-center text-center sm:items-start sm:text-left">
-          <FadeIn delay={80}>
-            <p className="section-label mb-3">{profile.title}</p>
-          </FadeIn>
-          <FadeIn delay={160}>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              <span className="gradient-text">{profile.name}</span>
-            </h1>
-          </FadeIn>
-          <FadeIn delay={240}>
-            <p className="mt-4 max-w-xl text-lg leading-relaxed text-zinc-400">
-              {profile.tagline}
+    <section className="relative min-h-[calc(100vh-5rem)]">
+      <SocialSidebar />
+      <div className="flex min-h-[calc(100vh-5rem)] flex-col lg:flex-row">
+        {/* Left content — 70% */}
+        <div className="flex flex-1 flex-col justify-center px-8 py-16 lg:w-[70%] lg:pl-20 lg:pr-8">
+          <FadeIn>
+            <p className="text-xl text-white md:text-2xl">
+              Hi! I am <span className="accent-text">{profile.name}</span>
             </p>
           </FadeIn>
-          <FadeIn delay={320}>
-            <div className="mt-8 flex flex-wrap justify-center gap-3 sm:justify-start">
+          <FadeIn delay={100}>
+            <h1 className="mt-2 text-4xl font-bold text-[#5db9ee] md:text-5xl lg:text-6xl">
+              {profile.title}
+            </h1>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <p className="mt-6 max-w-xl text-base leading-8 text-white md:text-lg">
+              {profile.heroBio}
+            </p>
+          </FadeIn>
+          <FadeIn delay={300}>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                href="/contact"
+                className="btn-primary rounded-lg px-6 py-3 text-base font-medium"
+              >
+                Hire Me
+              </Link>
               <Link
                 href="/projects"
-                className="btn-primary rounded-full px-6 py-2.5 text-sm font-medium text-white"
+                className="btn-outline rounded-lg px-6 py-3 text-base font-medium"
               >
-                View projects
+                View Project
               </Link>
-              <Link
-                href="/about"
-                className="glass rounded-full px-6 py-2.5 text-sm font-medium text-zinc-300 hover:text-zinc-100"
-              >
-                About me
-              </Link>
+            </div>
+          </FadeIn>
+
+          {/* Mobile profile */}
+          <FadeIn delay={400}>
+            <div className="mt-12 flex justify-center lg:hidden">
+              <ProfileImage size={180} neon />
             </div>
           </FadeIn>
         </div>
-      </div>
-      <div className="relative mx-auto mt-16 grid max-w-6xl grid-cols-2 gap-3 sm:grid-cols-4">
-        {profile.stats.map((stat, i) => (
-          <FadeIn key={stat.label} delay={400 + i * 80}>
-            <div className="glass rounded-2xl px-5 py-5 text-center">
-              <p className="text-xl font-semibold gradient-text-subtle">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-xs text-zinc-500">{stat.label}</p>
-            </div>
-          </FadeIn>
-        ))}
+
+        {/* Right panel — 30% */}
+        <div className="hero-right-panel hidden lg:flex lg:w-[30%]">
+          <ProfileHero />
+        </div>
       </div>
     </section>
   );

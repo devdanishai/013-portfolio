@@ -9,10 +9,10 @@ export function AboutContent() {
       <div className="grid gap-12 lg:grid-cols-[280px_1fr]">
         <FadeIn>
           <div className="flex flex-col items-center gap-4 lg:items-start">
-            <ProfileImage size={200} />
+            <ProfileImage size={200} neon />
             <div className="text-center lg:text-left">
-              <p className="font-semibold text-zinc-100">{profile.name}</p>
-              <p className="text-sm text-violet-400">{profile.title}</p>
+              <p className="font-semibold text-white">{profile.name}</p>
+              <p className="text-sm text-[#5db9ee]">{profile.title}</p>
             </div>
           </div>
         </FadeIn>
@@ -34,7 +34,7 @@ export function AboutContent() {
                     key={item}
                     className="flex gap-3 text-sm leading-relaxed text-zinc-400"
                   >
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gradient-to-r from-violet-500 to-cyan-400" />
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#5db9ee]" />
                     {item}
                   </li>
                 ))}
@@ -45,13 +45,13 @@ export function AboutContent() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/projects"
-                className="btn-primary rounded-full px-5 py-2 text-sm font-medium text-white"
+                className="btn-primary rounded-lg px-5 py-2 text-sm font-medium"
               >
                 See my work
               </Link>
               <Link
                 href="/contact"
-                className="glass rounded-full px-5 py-2 text-sm text-zinc-300 hover:text-zinc-100"
+                className="btn-outline rounded-lg px-5 py-2 text-sm font-medium"
               >
                 Get in touch
               </Link>
@@ -75,7 +75,7 @@ export function SkillsContent() {
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-xl border border-white/5 bg-black/20 px-3 py-1.5 text-sm text-zinc-300 transition-colors hover:border-violet-500/30 hover:text-zinc-100"
+                    className="rounded-xl border border-white/5 bg-black/20 px-3 py-1.5 text-sm text-zinc-300 transition-colors hover:border-[#5db9ee]/30 hover:text-white"
                   >
                     {skill}
                   </span>
