@@ -55,7 +55,7 @@ export function Hero() {
         <div className="flex flex-1 flex-col justify-center px-8 py-16 sm:px-10 lg:py-20 lg:pl-4 lg:pr-16">
           <FadeIn>
             <p className="text-xl text-white sm:text-2xl">
-              Hi! I am <span className="accent-text">{profile.name}</span>
+              Hi ! I am <span className="accent-text font-bold">{profile.name}</span>
             </p>
           </FadeIn>
           <FadeIn delay={100}>
