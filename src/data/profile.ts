@@ -10,7 +10,7 @@ export const profile = {
     "I design and scale production-grade LLM systems. Kaggle Grandmaster who peaked at #26 globally — I build end-to-end GenAI products from RAG pipelines and agent workflows to scalable, cloud-native deployment.",
   bio: "I design and scale production-grade LLM systems.",
   bioExtended:
-    "I'm a Kaggle Grandmaster and LLM Systems Architect specializing in building end-to-end GenAI products — from RAG pipelines and agent workflows to scalable, cloud-native deployment.",
+    "I'm a Kaggle Grandmaster and LLM Systems Architect with 12+ years of experience in the field of AI/Data Science, specializing in building end-to-end GenAI products — from RAG pipelines and agent workflows to scalable, cloud-native deployment.",
   bioMission:
     "I sit at the intersection of advanced AI research and production engineering, helping teams move from prototype to reliable, cost-efficient, and maintainable AI systems.",
   closingStatement:

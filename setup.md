@@ -27,3 +27,13 @@ git push
 
 _________________________________________________________________
 # make bild
+npm run build
+
+git add .
+git commit -m "Update portfolio content and projects"
+git push
+
+# optional (after build u can check app with tjhis command)
+npm run start 
+
+____________________________________________________
