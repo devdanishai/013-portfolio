@@ -4,7 +4,7 @@ export const profile = {
   tagline: "Kaggle Grandmaster · AI Web App Developer · 12+ years building intelligent systems",
   bio: "I design and ship production ML systems and AI-powered web applications — from Kaggle competitions to full-stack products deployed at scale.",
   email: "danishammar112233@gmail.com",
-  image: "/images/profile.jpg",
+  image: "/images/profolio.png",
   initials: "DA",
   links: {
     github: "https://github.com/devdanishai",
