@@ -3,12 +3,12 @@ import { ArchiveSection } from "@/components/ArchiveSection";
 import { BentoGrid } from "@/components/BentoGrid";
 import { PageHeader } from "@/components/PageHeader";
 import { profile } from "@/data/profile";
-import { projects } from "@/data/projects";
+import { getPublishedProjects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: `Projects — ${profile.name}`,
   description:
-    "Production AI systems, vehicle analytics, and archived GenAI demo experiments.",
+    "Production AI systems and archived GenAI demo experiments.",
 };
 
 export default function ProjectsPage() {
@@ -26,10 +26,10 @@ export default function ProjectsPage() {
             Production &amp; selected demos
           </h2>
           <p className="mt-2 text-sm text-zinc-400">
-            Production system plus standout GenAI, RAG, and multimodal experiments.
+            Production-grade GenAI, RAG, and multimodal experiments.
           </p>
         </div>
-        <BentoGrid projects={projects} />
+        <BentoGrid projects={getPublishedProjects()} />
         <ArchiveSection />
       </div>
     </>

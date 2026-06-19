@@ -9,6 +9,7 @@ export type Project = {
   github?: string;
   featured?: boolean;
   showOnHome?: boolean;
+  published?: boolean;
   span?: "default" | "wide" | "tall";
 };
 
@@ -31,6 +32,7 @@ export const projects: Project[] = [
     href: "/projects/vehicle-analytics",
     featured: true,
     showOnHome: true,
+    published: false,
     span: "wide",
   },
   {
@@ -89,6 +91,14 @@ export const projects: Project[] = [
     showOnHome: false,
   },
 ];
+
+export function isPublished(project: Project): boolean {
+  return project.published !== false;
+}
+
+export function getPublishedProjects(): Project[] {
+  return projects.filter(isPublished);
+}
 
 export function getProject(id: string): Project | undefined {
   return projects.find((p) => p.id === id);

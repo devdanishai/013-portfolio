@@ -2,9 +2,11 @@ import { BentoGrid } from "@/components/BentoGrid";
 import { ExploreCards } from "@/components/ExploreCards";
 import { Hero } from "@/components/Hero";
 import { SectionHeader } from "@/components/SectionHeader";
-import { projects } from "@/data/projects";
+import { getPublishedProjects } from "@/data/projects";
 
-const featured = projects.filter((p) => p.featured && p.showOnHome !== false);
+const featured = getPublishedProjects().filter(
+  (p) => p.featured && p.showOnHome !== false,
+);
 
 export default function Home() {
   return (

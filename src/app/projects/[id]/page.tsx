@@ -2,13 +2,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
-import { getProject, projects } from "@/data/projects";
+import { getProject, getPublishedProjects, isPublished } from "@/data/projects";
 import { profile } from "@/data/profile";
 
 type Props = { params: Promise<{ id: string }> };
 
 export async function generateStaticParams() {
-  return projects
+  return getPublishedProjects()
     .filter((p) => p.highlights?.length)
     .map((p) => ({ id: p.id }));
 }
@@ -16,7 +16,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { id } = await params;
   const project = getProject(id);
-  if (!project) return { title: "Project Not Found" };
+  if (!project || !isPublished(project)) return { title: "Project Not Found" };
   return {
     title: `${project.title} — ${profile.name}`,
     description: project.description,
@@ -27,7 +27,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   const { id } = await params;
   const project = getProject(id);
 
-  if (!project || !project.highlights?.length) {
+  if (!project || !isPublished(project) || !project.highlights?.length) {
     notFound();
   }
 
