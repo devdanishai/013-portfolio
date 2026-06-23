@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { AndroidAppsSection } from "@/components/AndroidAppsSection";
 import { ArchiveSection } from "@/components/ArchiveSection";
 import { BentoGrid } from "@/components/BentoGrid";
 import { PageHeader } from "@/components/PageHeader";
 import { profile } from "@/data/profile";
-import { getPublishedProjects } from "@/data/projects";
+import { getAndroidProjects, getFeaturedProjects } from "@/data/projects";
 
 export const metadata: Metadata = {
   title: `Projects — ${profile.name}`,
@@ -29,7 +30,8 @@ export default function ProjectsPage() {
             Production-grade GenAI, RAG, and multimodal experiments.
           </p>
         </div>
-        <BentoGrid projects={getPublishedProjects()} />
+        <BentoGrid projects={getFeaturedProjects()} />
+        <AndroidAppsSection projects={getAndroidProjects()} />
         <ArchiveSection />
       </div>
     </>

@@ -17,6 +17,8 @@ export type Project = {
   featured?: boolean;
   showOnHome?: boolean;
   published?: boolean;
+  section?: "featured" | "android";
+  oneLiner?: string;
   span?: "default" | "wide" | "tall";
 };
 
@@ -46,6 +48,8 @@ export const projects: Project[] = [
     id: "cash-wallet",
     title: "Cash Wallet",
     subtitle: "Personal expense tracker for Android (PKR)",
+    oneLiner:
+      "Offline-first PKR expense tracker for cash, bank, and mobile wallets — built for daily use in Pakistan.",
     description:
       "Offline-first mobile app to track money across cash, bank, and mobile wallets (EasyPaisa, JazzCash, Naya Pay, and more), categorize expenses, and view monthly spending reports — built for daily use in Pakistan.",
     highlights: [
@@ -89,9 +93,11 @@ export const projects: Project[] = [
     featured: true,
     showOnHome: true,
     published: true,
+    section: "android",
     span: "wide",
   },
   {
+    id: "multidoc-rag",
     title: "RAG PDF Multi-Doc Chatbot",
     description:
       "Custom multi-PDF RAG chatbot with FastAPI backend, ChromaDB vector store, and a web UI for document Q&A across multiple files.",
@@ -153,6 +159,14 @@ export function isPublished(project: Project): boolean {
 
 export function getPublishedProjects(): Project[] {
   return projects.filter(isPublished);
+}
+
+export function getFeaturedProjects(): Project[] {
+  return getPublishedProjects().filter((p) => p.section !== "android");
+}
+
+export function getAndroidProjects(): Project[] {
+  return getPublishedProjects().filter((p) => p.section === "android");
 }
 
 export function getProject(id: string): Project | undefined {
