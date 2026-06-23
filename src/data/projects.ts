@@ -1,9 +1,16 @@
+export type ProjectImage = {
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
 export type Project = {
   id: string;
   title: string;
   subtitle?: string;
   description: string;
   highlights?: string[];
+  images?: ProjectImage[];
   tags: string[];
   href?: string;
   github?: string;
@@ -36,7 +43,55 @@ export const projects: Project[] = [
     span: "wide",
   },
   {
-    id: "multidoc-rag",
+    id: "cash-wallet",
+    title: "Cash Wallet",
+    subtitle: "Personal expense tracker for Android (PKR)",
+    description:
+      "Offline-first mobile app to track money across cash, bank, and mobile wallets (EasyPaisa, JazzCash, Naya Pay, and more), categorize expenses, and view monthly spending reports — built for daily use in Pakistan.",
+    highlights: [
+      "Built multi-wallet support with income, expense, and transfer flows across cash, bank, and mobile wallets.",
+      "Designed SQLite schema and transfer logic so internal moves don't inflate income/expense reports.",
+      "Implemented monthly category aggregation and drill-down reports from local transaction data.",
+      "Shipped standalone Android APK via Expo SDK 54, EAS Build, and sideload distribution (v1.0.0-beta.1).",
+      "Privacy-first: fully offline storage, JSON backup/restore, no cloud sync during normal use.",
+    ],
+    images: [
+      {
+        src: "/images/projects/cash-wallet/cw01.jpg",
+        alt: "Cash Wallet home dashboard with total balance and wallet list",
+        caption: "Home — total balance and per-wallet balances",
+      },
+      {
+        src: "/images/projects/cash-wallet/cw02.jpg",
+        alt: "Monthly expense report broken down by category",
+        caption: "Reports — monthly spending by category",
+      },
+      {
+        src: "/images/projects/cash-wallet/cw03.jpg",
+        alt: "Transaction history filtered by wallet, category, and type",
+        caption: "History — filter by wallet, category, and type",
+      },
+      {
+        src: "/images/projects/cash-wallet/cw04.jpg",
+        alt: "Manage screen for custom wallets and categories",
+        caption: "Manage — custom wallets and categories",
+      },
+    ],
+    tags: [
+      "React Native",
+      "Expo",
+      "TypeScript",
+      "SQLite",
+      "Android",
+      "Offline-First",
+    ],
+    href: "/projects/cash-wallet",
+    featured: true,
+    showOnHome: true,
+    published: true,
+    span: "wide",
+  },
+  {
     title: "RAG PDF Multi-Doc Chatbot",
     description:
       "Custom multi-PDF RAG chatbot with FastAPI backend, ChromaDB vector store, and a web UI for document Q&A across multiple files.",

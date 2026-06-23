@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
+import { ProjectScreenshots } from "@/components/ProjectScreenshots";
 import { getProject, getPublishedProjects, isPublished } from "@/data/projects";
 import { profile } from "@/data/profile";
 
@@ -52,6 +53,10 @@ export default async function ProjectDetailPage({ params }: Props) {
             ))}
           </div>
         </div>
+
+        {project.images && project.images.length > 0 && (
+          <ProjectScreenshots images={project.images} />
+        )}
 
         <div className="glass mt-8 rounded-2xl p-8">
           <h2 className="section-label mb-6">Key contributions</h2>

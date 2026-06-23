@@ -37,3 +37,6 @@ git push
 npm run start 
 
 ____________________________________________________
+
+- if wanna show vehicle project 
+src/data/projects.ts: line 35: change fasle into true
