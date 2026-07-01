@@ -97,6 +97,35 @@ export const projects: Project[] = [
     span: "wide",
   },
   {
+    id: "rag-eval",
+    title: "RAG Evaluation App",
+    subtitle: "Self-hosted RAG evaluation pipeline for customer support bots",
+    description:
+      "End-to-end self-hosted pipeline that ingests support docs into Qdrant, answers questions via a LangChain RAG stack with local Qwen models, scores quality with RAGAS, and traces every run in Langfuse — with pass/fail thresholds saved per eval run.",
+    highlights: [
+      "Built ingest → retrieve → generate → evaluate flow using LangChain, Qdrant, and BGE-M3 embeddings on the Bitext customer-support dataset.",
+      "Deployed local Qwen 14B AWQ for RAG answers and Qwen 7B as a RAGAS judge model on NVIDIA RTX 3090 via vLLM.",
+      "Implemented RAGAS evaluation (faithfulness, answer relevancy, context precision/recall) with configurable pass/fail thresholds per metric.",
+      "Integrated self-hosted Langfuse tracing for context, prompts, answers, and latency on every query.",
+      "Exported per-run JSON summaries and per-question CSV breakdowns to a results history for regression tracking.",
+      "Designed YAML-driven config for models, retrieval top-k, chunking, dataset sampling, and eval thresholds.",
+    ],
+    tags: [
+      "LangChain",
+      "RAGAS",
+      "Qdrant",
+      "Langfuse",
+      "vLLM",
+      "RAG",
+    ],
+    href: "/projects/rag-eval",
+    github: "https://github.com/devdanishai/015-rag-eval",
+    featured: true,
+    showOnHome: true,
+    published: true,
+    span: "wide",
+  },
+  {
     id: "multidoc-rag",
     title: "RAG PDF Multi-Doc Chatbot",
     description:

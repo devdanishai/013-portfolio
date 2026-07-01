@@ -26,9 +26,12 @@ git commit -m "Apply neon dark theme from old portfolio"
 git push
 
 _________________________________________________________________
-# make bild
+
+
 npm run build
 
+# commands for apply changes 
+npm run build # optional
 git add .
 git commit -m "Update portfolio content and projects"
 git push
