@@ -6,7 +6,6 @@ import type { ProjectImage } from "@/data/projects";
 
 export function ProjectScreenshots({ images }: { images: ProjectImage[] }) {
   const [active, setActive] = useState<ProjectImage | null>(null);
-  const hasDesktop = images.some((image) => image.layout === "desktop");
 
   const close = useCallback(() => setActive(null), []);
 
@@ -31,9 +30,7 @@ export function ProjectScreenshots({ images }: { images: ProjectImage[] }) {
       <div className="glass mt-8 rounded-2xl p-8">
         <h2 className="section-label mb-2">Screenshots</h2>
         <p className="mb-6 text-xs text-zinc-500">Click any image to enlarge</p>
-        <div
-          className={`grid gap-8 ${hasDesktop ? "grid-cols-1" : "gap-6 sm:grid-cols-2"}`}
-        >
+        <div className="grid gap-6 sm:grid-cols-2">
           {images.map((image, index) => {
             const desktop = image.layout === "desktop";
             return (
@@ -61,7 +58,7 @@ export function ProjectScreenshots({ images }: { images: ProjectImage[] }) {
                           ? "object-contain bg-[#111] transition-opacity group-hover:opacity-90"
                           : "object-cover object-top transition-opacity group-hover:opacity-90"
                       }
-                      sizes={desktop ? "100vw" : "(max-width: 640px) 100vw, 50vw"}
+                      sizes="(max-width: 640px) 100vw, 50vw"
                       priority={index === 0}
                     />
                   </div>
