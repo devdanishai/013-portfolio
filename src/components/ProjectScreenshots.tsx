@@ -76,7 +76,7 @@ export function ProjectScreenshots({ images }: { images: ProjectImage[] }) {
 
       {active && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-8"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-2 sm:p-3"
           onClick={close}
           role="dialog"
           aria-modal="true"
@@ -85,28 +85,28 @@ export function ProjectScreenshots({ images }: { images: ProjectImage[] }) {
           <button
             type="button"
             onClick={close}
-            className="absolute right-4 top-4 rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-zinc-300 transition-colors hover:bg-white/10 hover:text-white"
+            className="absolute right-3 top-3 z-10 rounded-lg border border-white/10 bg-black/60 px-3 py-1.5 text-sm text-zinc-300 transition-colors hover:bg-white/10 hover:text-white"
             aria-label="Close"
           >
             Close
           </button>
 
           <div
-            className="relative flex max-h-[90vh] w-full max-w-6xl flex-col"
+            className="flex h-full w-full max-h-[96vh] max-w-[98vw] flex-col items-center justify-center"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="relative min-h-[50vh] w-full flex-1">
+            <div className="relative h-[88vh] w-full max-w-[98vw]">
               <Image
                 src={active.src}
                 alt={active.alt}
                 fill
                 className="object-contain"
-                sizes="100vw"
+                sizes="98vw"
                 priority
               />
             </div>
             {active.caption && (
-              <p className="mt-4 text-center text-sm text-zinc-400">{active.caption}</p>
+              <p className="mt-2 shrink-0 text-center text-sm text-zinc-400">{active.caption}</p>
             )}
           </div>
         </div>
