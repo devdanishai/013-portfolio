@@ -39,7 +39,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         title={project.title}
         description={project.subtitle ?? project.description}
       />
-      <div className="mx-auto max-w-4xl px-6 pb-20">
+      <div className="mx-auto max-w-6xl px-6 pb-20">
         <div className="glass rounded-2xl p-8">
           <p className="leading-relaxed text-zinc-300">{project.description}</p>
           <div className="mt-6 flex flex-wrap gap-2">
