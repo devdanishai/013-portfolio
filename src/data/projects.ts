@@ -2,6 +2,7 @@ export type ProjectImage = {
   src: string;
   alt: string;
   caption?: string;
+  layout?: "mobile" | "desktop";
 };
 
 export type Project = {
@@ -109,6 +110,44 @@ export const projects: Project[] = [
       "Integrated self-hosted Langfuse tracing for context, prompts, answers, and latency on every query.",
       "Exported per-run JSON summaries and per-question CSV breakdowns to a results history for regression tracking.",
       "Designed YAML-driven config for models, retrieval top-k, chunking, dataset sampling, and eval thresholds.",
+    ],
+    images: [
+      {
+        src: "/images/projects/rag-eval/1.jpg",
+        alt: "Ask the Bot — question input",
+        caption: "Ask the Bot — question input",
+        layout: "desktop",
+      },
+      {
+        src: "/images/projects/rag-eval/2.jpg",
+        alt: "Ask the Bot — answer and retrieved chunks",
+        caption: "Ask the Bot — answer and retrieved chunks",
+        layout: "desktop",
+      },
+      {
+        src: "/images/projects/rag-eval/3.jpg",
+        alt: "Run Evaluation — config",
+        caption: "Run Evaluation — config",
+        layout: "desktop",
+      },
+      {
+        src: "/images/projects/rag-eval/4.jpg",
+        alt: "Run Evaluation — RAGAS results",
+        caption: "Run Evaluation — RAGAS results",
+        layout: "desktop",
+      },
+      {
+        src: "/images/projects/rag-eval/5.jpg",
+        alt: "Results History — metric scores",
+        caption: "Results History — metric scores",
+        layout: "desktop",
+      },
+      {
+        src: "/images/projects/rag-eval/6.jpg",
+        alt: "Results History — per-question table",
+        caption: "Results History — per-question breakdown",
+        layout: "desktop",
+      },
     ],
     tags: [
       "LangChain",
